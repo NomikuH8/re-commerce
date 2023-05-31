@@ -1,52 +1,24 @@
-import equinoImage from "../assets/equino.jpeg";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-
-interface CategoriaType {
-  image?: string;
-  name: string;
-  link: string;
-}
-
-const categorias: CategoriaType[] = [
-  {
-    image: equinoImage,
-    name: "Equinos",
-    link: "/categorias/equinos",
-  },
-  {
-    name: "Lupinos",
-    link: "/categorias/lupinos",
-  },
-  {
-    name: "Vulpinos",
-    link: "/categorias/vulpinos",
-  },
-];
+import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import styled from "styled-components"
+import { categorias } from "../data/categorias"
 
 export default function CategoriasPage() {
-  const [filtro, setFiltro] = useState("");
-  const [catFiltrado, setCatFiltrado] = useState(categorias);
+  const [filtro, setFiltro] = useState("")
+  const [catFiltrado, setCatFiltrado] = useState(categorias)
 
   useEffect(() => {
     if (filtro)
       setCatFiltrado(
-        categorias.filter(
-          (val) => val.name.toLowerCase().search(filtro.toLowerCase()) >= 0
-        )
-      );
-    if (!filtro) setCatFiltrado(categorias);
-  }, [filtro]);
+        categorias.filter((val) => val.name.toLowerCase().search(filtro.toLowerCase()) >= 0)
+      )
+    if (!filtro) setCatFiltrado(categorias)
+  }, [filtro])
 
   return (
     <>
       <FiltroDiv>
-      <input
-        type="text"
-        placeholder="Filtrar..."
-        onChange={(e) => setFiltro(e.target.value)}
-      />
+        <input type='text' placeholder='Filtrar...' onChange={(e) => setFiltro(e.target.value)} />
       </FiltroDiv>
 
       <CardDiv>
@@ -56,7 +28,7 @@ export default function CategoriasPage() {
               <div>
                 <img src={val.image} alt={val.name} />
               </div>
-              <div className="spans">
+              <div className='spans'>
                 <span>{val.name}</span>
               </div>
             </Link>
@@ -64,7 +36,7 @@ export default function CategoriasPage() {
         ))}
       </CardDiv>
     </>
-  );
+  )
 }
 
 const FiltroDiv = styled.div`
@@ -86,7 +58,7 @@ const FiltroDiv = styled.div`
 const CardDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
-`;
+`
 
 const Card = styled.div`
   margin: 1%;
@@ -120,4 +92,4 @@ const Card = styled.div`
     font-size: 38px;
     flex: 1 1 auto;
   }
-`;
+`

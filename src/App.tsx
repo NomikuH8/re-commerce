@@ -12,14 +12,14 @@ function App() {
         <Routes>
           <Route element={<MainWrapper />}>
             <Route index element={<HomePage />} />
-            <Route path="categorias" element={<CategoriasPage />} />
-            <Route path="categorias/:categoria" element={<CatPage />} />
-            <Route path="sobre" element={<AboutPage />} />
+            <Route path='categorias' element={<CategoriasPage />} />
+            <Route path='categorias/:categoria' element={<CatPage />} />
+            <Route path='sobre' element={<AboutPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
