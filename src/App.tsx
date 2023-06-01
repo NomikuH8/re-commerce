@@ -4,6 +4,7 @@ import MainWrapper from "./wrappers/MainWrapper"
 import AboutPage from "./pages/AboutPage"
 import HomePage from "./pages/HomePage"
 import CatPage from "./pages/CatPage"
+import CartPage from "./pages/CartPage"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route index element={<HomePage />} />
             <Route path='categorias' element={<CategoriasPage />} />
             <Route path='categorias/:categoria' element={<CatPage />} />
+            <Route path='carrinho' element={<CartPage />} />
             <Route path='sobre' element={<AboutPage />} />
           </Route>
         </Routes>

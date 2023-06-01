@@ -2,14 +2,21 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router"
 import { ProdutoType, produtos } from "../data/produtos"
 import styled from "styled-components"
+import { useAppDispatch } from "../store/hooks"
+import { adicionarCarrinho } from "../slices/CarrinhoReducer"
 
 export default function CatPage() {
   const [animais, setAnimais] = useState<ProdutoType[]>([])
   const { categoria } = useParams()
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
     setAnimais(produtos.filter((val) => val.category === categoria))
   }, [])
+
+  const ComprarClick = (produto: ProdutoType) => {
+    dispatch(adicionarCarrinho(produto))
+  }
 
   return (
     <WrapperDiv>
@@ -17,7 +24,7 @@ export default function CatPage() {
         {animais.map((val, idx) => (
           <Card key={idx}>
             <div>
-              <img src={val.image} alt={"imagem " + val.name} />
+              <img src={val.image} alt={"Imagem " + val.name} />
             </div>
             <InfoDiv>
               <span>
@@ -26,8 +33,8 @@ export default function CatPage() {
               <p>{val.description}</p>
             </InfoDiv>
             <PrecoDiv>
-              <span>{val.price}</span>
-              <button>Comprar</button>
+              <span>R${val.price},00</span>
+              <button onClick={() => ComprarClick(val)}>Comprar</button>
             </PrecoDiv>
           </Card>
         ))}
@@ -54,7 +61,7 @@ const AnimaisDiv = styled.div`
 const Card = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 30%;
   box-shadow: 0 0 10px #a1a1a1;
   height: 300px;
@@ -77,12 +84,10 @@ const PrecoDiv = styled.div`
   text-align: center;
   font-size: larger;
   position: relative;
-  bottom: 15px;
+  bottom: 20px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 5%;
-  margin-top: 0;
 
   button {
     background-color: #3fff73;
@@ -97,5 +102,9 @@ const PrecoDiv = styled.div`
     background-color: #2dcf4b;
     transition: 200ms;
     cursor: pointer;
+  }
+
+  button:focus {
+    background-color: #e5d81d;
   }
 `

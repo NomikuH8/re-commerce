@@ -14,6 +14,10 @@ const links = [
     link: "/categorias",
   },
   {
+    name: "Carrinho",
+    link: "/carrinho",
+  },
+  {
     name: "sobre",
     link: "/sobre",
   },
