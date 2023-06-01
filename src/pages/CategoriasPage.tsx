@@ -82,6 +82,7 @@ const Card = styled.div`
     border-radius: 20px;
     height: 200px;
     width: 230px;
+    object-fit: cover;
   }
 
   .spans {

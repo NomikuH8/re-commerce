@@ -10,7 +10,7 @@ interface ProdutoType {
 export const produtos: ProdutoType[] = [
   {
     image: "",
-    name: "Cavalo",
+    name: "Cavalo Agnaldo",
     description: "Inhinhohohon huffff",
     price: "R$550.00",
     category: "equinos",
