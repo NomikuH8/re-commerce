@@ -1,13 +1,13 @@
-import capybaraImage from "../assets/capybara.jpg"
-import primataImage from "../assets/primata.jpg"
-import guepardImage from "../assets/guepard.jpg"
-import equinoImage from "../assets/equino.jpeg"
-import snakeImage from "../assets/snake.jpg"
-import araraImage from "../assets/arara.jpg"
-import raposaImage from "../assets/fox.jpg"
-import loboImage from "../assets/wolf.jpg"
-import fishImage from "../assets/fish.jpg"
-import frogImage from "../assets/frog.jpg"
+import capybaraImage from "../assets/categorias/capybara.jpg"
+import primataImage from "../assets/categorias/primata.jpg"
+import guepardImage from "../assets/categorias/guepard.jpg"
+import equinoImage from "../assets/categorias/equino.jpeg"
+import snakeImage from "../assets/categorias/snake.jpg"
+import araraImage from "../assets/categorias/arara.jpg"
+import raposaImage from "../assets/categorias/fox.jpg"
+import loboImage from "../assets/categorias/wolf.jpg"
+import fishImage from "../assets/categorias/fish.jpg"
+import frogImage from "../assets/categorias/frog.jpg"
 
 interface CategoriaType {
   image?: string
