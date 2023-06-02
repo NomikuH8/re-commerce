@@ -134,11 +134,11 @@ export const produtos: ProdutoType[] = [
     category: "anfibios",
   },
   {
-    image: "",
-    name: "",
-    description: "",
-    price: 0,
-    category: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bd/10_Month_Old_Fennec_Fox.jpg",
+    name: "Raposa Fennec",
+    description: "Uma das mais famosas raposas entre os furries.",
+    price: 780,
+    category: "raposas",
   },
   {
     image: "",
